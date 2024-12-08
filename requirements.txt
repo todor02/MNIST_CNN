@@ -1,2 +1,4 @@
 pandas
 tensorflow
+tkinter
+pillow

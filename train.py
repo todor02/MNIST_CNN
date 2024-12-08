@@ -48,6 +48,7 @@ cnn.fit(x=X_train, y=y_train, validation_data=(X_valid, y_valid), epochs=10, bat
 test_loss, test_accuracy = cnn.evaluate(X_test, y_test)
 print(f"Test accuracy: {test_accuracy}")
 print(f"Test loss: {test_loss}")
+cnn.save('keras_model.keras')
 
 """
 313/313 ━━━━━━━━━━━━━━━━━━━━ 1s 2ms/step - accuracy: 0.9895 - loss: 0.0489   
