@@ -51,7 +51,8 @@ class App(tk.Tk):
         img = Image.open(filename)
         # Predict the digit
         digit, acc = predict_digit(img)
-        self.label.configure(text=f"Digit: {digit}, Confidence: {acc:.2f}")
+        acc = round(float(acc) * 100, 2)
+        self.label.configure(text=f"Digit: {digit}, Confidence: {acc}%")
         os.remove(filename)
 
     def draw_lines(self, event):
