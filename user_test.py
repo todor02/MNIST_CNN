@@ -7,7 +7,7 @@ import tensorflow as tf
 import os
 
 # Load the saved model
-model = tf.keras.models.load_model('keras_model.keras')
+model = tf.keras.models.load_model('keras_model.h5')
 
 def predict_digit(img):
     # Resize image to 28x28 pixels
@@ -51,12 +51,13 @@ class App(tk.Tk):
         img = Image.open(filename)
         # Predict the digit
         digit, acc = predict_digit(img)
-        self.label.configure(text=f"Digit: {digit}, Confidence: {acc:.2f}")
+        acc = round(float(acc) * 100, 2)
+        self.label.configure(text=f"Digit: {digit}, Confidence: {acc}%")
         os.remove(filename)
 
     def draw_lines(self, event):
         x, y = event.x, event.y
-        r = 8  # Brush radius
+        r = 4  # Brush radius
         self.canvas.create_oval(x - r, y - r, x + r, y + r, fill='black')
         self.draw.ellipse([x - r, y - r, x + r, y + r], fill='black')
 
