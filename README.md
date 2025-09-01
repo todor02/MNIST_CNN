@@ -8,6 +8,18 @@ A simple **Convolutional Neural Network** built in **TensorFlow** to classify ha
 
 ---
 
+## CUDA Branch Only:
+
+You must have CUDA and cuDNN installed manually (not included in requirements.txt).
+
+If you have an older GPU, you may encounter TensorFlow bugs. In that case, try:
+
+```bash
+pip install tensorflow==2.10.0
+```
+
+---
+
 ## 🚀 Overview
 
 This project demonstrates how to construct, train, and evaluate a CNN for recognizing digits (0–9) in grayscale 28×28 pixel images. The MNIST dataset is one of the foundational benchmarks in deep learning and computer vision.
